@@ -5,7 +5,7 @@ session_start();
 $hostname = 'localhost';
 $username = 'root';
 $password = '';
-$dbname = 'db_ttms';
+$dbname = 'db_ttms'; 
 
 $connection = mysqli_connect($hostname,$username,$password);
 $db_select = mysqli_select_db ($connection,$dbname);
@@ -52,7 +52,7 @@ if(mysqli_query($connection,$sql)){
  -->
 <!-- The Modal -->
 <div id="myModal" class="modal">
-
+ 
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">+</span>

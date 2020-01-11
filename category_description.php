@@ -5,7 +5,7 @@
 			</div>
 			<div class="img_text">
 				<div class="img_inside_text">
-					<img src="admin/image/6.jpg" alt="">
+					<img src="admin/image/bck/42809766054_89643fde67_b.jpg" alt="">
 				<p>HAVE A GOOD TIME without spending a time</p>
 				</div>
 			</div>

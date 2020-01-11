@@ -4,7 +4,9 @@
 require '../database/db_connect.php';
 
 if(isset($_POST['save'])){
-
+// echo "<pre/>";
+// print_r($_POST);
+// exit();
 	$directory="./image/";
 	$target_file=$directory.$_FILES['image']['name'];
 	$file_type=pathinfo($target_file,PATHINFO_EXTENSION);

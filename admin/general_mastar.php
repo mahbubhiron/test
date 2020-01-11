@@ -57,6 +57,8 @@
 					echo "--View Advertisemnet--";
 				}else if($val==19){
 					include '';
+				}else if($val==22){
+					echo "--View Contact--";;
 				}
 
 			}else{
@@ -129,11 +131,15 @@
 				else if($val==18){
 					include 'view_advertisement.php';
 				}else if($val==19){
-					include '';
+					include 'confirm_tour.php';
+				}else if($val==19){
+					include 'cancel_tour.php';
+				}else if($val==22){
+					include 'view_contact.php';
 				}
 
 			}
-
+ 
 			 ?>
 
 			 			</div>

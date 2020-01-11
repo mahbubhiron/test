@@ -9,11 +9,10 @@ if(isset($_POST['query'])){
 	$result= $conn->query($query);
 	if($result->num_rows>0){
 		while($row=$result->fetch_assoc()){
-			// echo "<a href='#' class='list-group-item list-group-item-action border-1' style='margin-right:100px;'>".$row['package_name']."</a>";
-			echo "<a href='#'>".$row['package_name']."</a>";
+			echo "<a href='#' style='z-index: 10;color: white;background-color: #56C1E0;text-decoration: none;'>".$row['package_name']."</a>";
 		}
 	}else{
-		echo "<a href='#'>No record</a>";
+		echo "	<p class='list-group-item border-1' > No Record</p> ";
 	}
 }
 

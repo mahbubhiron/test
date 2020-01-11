@@ -5,11 +5,11 @@
 require '../database/db_connect.php';
 
 if(isset($_POST['btn'])){
-	$target_file1="image/advertisment/".$_FILES['image-1']['name'];
+	$target_file1="image/advertisment/".$_FILES['image_1']['name'];
 	$f_t1=pathinfo($target_file1,PATHINFO_EXTENSION);
-	$target_file2="image/advertisment/".$_FILES['image-2']['name'];
+	$target_file2="image/advertisment/".$_FILES['image_2']['name'];
 	$f_t2=pathinfo($target_file2,PATHINFO_EXTENSION);
-	$target_file3="image/advertisment/".$_FILES['image-3']['name'];
+	$target_file3="image/advertisment/".$_FILES['image_3']['name'];
 	$f_t3=pathinfo($target_file3,PATHINFO_EXTENSION);
 
 	$title=$_POST['title'];
@@ -27,7 +27,7 @@ if(isset($_POST['btn'])){
 			echo "image is not jpg,png,jpeg or gif please upload type of image";
 
 		}else{
-			move_uploaded_file($_FILES['image-1']['tmp_name'], $target_file1); 
+			move_uploaded_file($_FILES['image_1']['tmp_name'], $target_file1); 
 			move_uploaded_file($_FILES['image-2']['tmp_name'], $target_file2); 
 			move_uploaded_file($_FILES['image-3']['tmp_name'], $target_file3);
 			// echo "<script>alert('image uploaded');</script>";
@@ -150,15 +150,15 @@ if(isset($_POST['btn'])){
 					</tr>
 					<tr>
 						<td>Upload Pic-1 :</td>
-						<td><input type="file" name="image-1" value="Chose file"></td>
+						<td><input type="file" name="image_1" value="Chose file"></td>
 					</tr>
 					<tr>
 						<td>Upload Pic-2 :</td>
-						<td><input type="file" name="image-2" value="Chose file"></td>
+						<td><input type="file" name="image_2" value="Chose file"></td>
 					</tr>
 					<tr>
 						<td>Upload Pic-3 :</td>
-						<td><input type="file" name="image-3" value="Chose file"></td>
+						<td><input type="file" name="image_3" value="Chose file"></td>
 					</tr>
 					<tr>
 						<td>Offer :</td>

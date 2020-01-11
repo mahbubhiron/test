@@ -21,9 +21,24 @@
 	<div class="top_header">
 		<?php include 'user_top.php'; ?>
 	</div>
+	
 	<div class="add_slider">
+		<?php 
+
+		require 'database/db_connect.php';
+
+		$sql="select * from tbl_advertiesment,tbl_package where tbl_advertiesment.package=tbl_package.package_id and tbl_advertiesment.a_id='1'";
+		$r=mysqli_query($connection,$sql);
+		if($r){
+			$result=mysqli_fetch_assoc($r);
+
+		}else {
+			die('error'.mysqli_error($connection));
+		}
+
+		 ?>
 		<div class="add_content">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, unde!</p>
+			<p><span style="color: red;font-size: 40px;font-weight: 700;font-family: bold;margin-top: -20px;text-align: center;"><?php echo $result['offer']; ?></span> in <?php echo $result['package_name']; ?></p>
 		</div>
 	</div>
 
@@ -36,24 +51,30 @@
 			$val = $_GET['key'];
 			if ($val==1) {
 				include 'home.php';
+				include 'user_galary.php';
+				include 'about.php';
+				include 'user_contact.php';
 			}else if ($val==2) {
 				include 'user_galary.php';
-			}else if ($val==3) {
-				include 'category.php';
+				include 'about.php';
+				include 'user_contact.php';
 			}else if ($val==4) {
 				include 'about.php';
+				include 'user_contact.php';
 			}else if ($val==5) {
 				include 'user_contact.php';
 			}
+			// else if ($val==6) {
+			// 	include 'cancel_tour.php';
+			// }
 		}else{
 			include 'home.php';
 			include 'user_galary.php';
-			include 'category.php';
+			// include 'category.php';
 			include 'about.php';
 			include 'user_contact.php';
 		}
 		?>
-		
 
 	<div class="foter">
 		<?php include 'bottom.php'; ?>

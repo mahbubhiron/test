@@ -1,3 +1,26 @@
+<?php 
+
+require 'database/db_connect.php';
+
+if(isset($_POST['btn'])){
+	$name=$_POST['name'];
+$contact_no=$_POST['contact_no'];
+$email=$_POST['email'];
+$details=$_POST['details'];
+
+$sql="insert into tbl_contact (name,phn_no,email,details) values('$name','$contact_no','$email','$details')";
+
+if(mysqli_query($connection,$sql)){
+	echo "<script>alert('Data insert succefully');</script>";
+}else{
+	die('error'.mysqli_error($connection));
+}
+
+}
+
+ ?>
+
+
 <div class="contact_container">
 			<div class="about_header">
 				<h2><ins>Contact Us</ins></h2>
@@ -27,7 +50,7 @@
 						</tr>
 						<tr>
 							<td>
-								<textarea name="" id="" cols="40" rows="5" placeholder="Write your message"></textarea>
+								<textarea name="details" id="" cols="40" rows="5" placeholder="Write your message"></textarea>
 							</td>
 						</tr>
 						<tr>

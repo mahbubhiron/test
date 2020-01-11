@@ -1,3 +1,51 @@
+<?php 
+
+require 'database/db_connect.php';
+
+ ?>
+
+<?php
+if(isset($_POST["btn"]))
+{
+
+	$s="insert into enquiry(Packageid,Name,Gender,Mobileno,Email,NoofDays,Child,Adults,hotel_name,message,Statusfield) values('" . $_REQUEST["pid"] ."','" . $_POST["u_name"] ."','" . $_POST["r1"] ."','" . $_POST["u_no"] ."','" . $_POST["u_mail"] ."','" . $_POST["stay_days"] ."','" . $_POST["child_no"] ."','" . $_POST["adult_no"] ."','" . $_POST["t7"] ."','" . $_POST["t8"] ."','Pending')";	
+	
+	
+		if(mysqli_query($connection,$s)){
+			echo "<script>alert('Record Save');</script>";
+// 			echo "<script>
+// function myFunction() {
+//   window.print();
+// }
+// </script>";
+		}else{
+			die('data not save'.mysqli_error($connection));
+		}
+	
+}
+?>
+
+<?php 
+
+$sql="select * from tbl_package";
+if(mysqli_query($connection,$sql)){
+	$resource_id=mysqli_query($connection,$sql);
+}else{
+	die('not view'.mysqli_error($connection));
+}
+?>
+
+<?php
+
+$s="select * from tbl_package where package_id='" . $_GET["pid"] ."'";
+
+$result=mysqli_query($connection,$s);
+$r=mysqli_num_rows($result);
+//echo $r;
+$n=0;
+$data=mysqli_fetch_array($result);
+?>
+
 <div class="subcategory_container">
 	<div class="subcategory_content">
 		<h3>Enquiry</h3>
@@ -7,11 +55,11 @@
 		  	<table>
 		  	<tr>
 		  		<td>Package ID :</td>
-		  		<td>001</td>
+		  		<td><?php echo $data[0];?></td>
 		  	</tr>
 		  	<tr>
 		  		<td>Package Name :</td>
-		  		<td>Lorem ipsum dolor sit amet.</td>
+		  		<td><?php echo $data[1];?></td>
 		  	</tr>
 		  	<tr>
 		  		<td>Name :</td>
@@ -47,21 +95,34 @@
 		  	<tr>
 		  		<td>Hotel Name :</td>
 		  		<td>
-		  			<select name="" id="">
+		  			<select name="t8" id="">
 		  				<option value="">--Select Hotel--</option>
-		  				<option value="hotel palace">hotel palace</option>
+		  				<?php
+
+		  				$s="select * from tbl_package where package_id='" . $_GET["pid"] ."'";
+
+						$result=mysqli_query($connection,$s);
+						$r=mysqli_num_rows($result); 
+
+		  				while($row=mysqli_fetch_assoc($result)){
+
+		  				?>
+		  				<option value="<?php echo $row['hotel_name_one']; ?> "><?php echo $row['hotel_name_one']; ?></option>
+						<option value="<?php echo $row['hotel_name_two']; ?> "><?php echo $row['hotel_name_two']; ?></option>
+						<option value="<?php echo $row['hotel_name_three']; ?> "><?php echo $row['hotel_name_three']; ?></option>
+		  				<?php } ?>
 		  			</select>
 		  		</td>
 		  	</tr>
 		  	<tr>
 		  		<td>Enwuiry Message :</td>
 		  		<td>
-		  			<textarea name="" id="" cols="30" rows="5"></textarea>
+		  			<textarea name="t7" id="" cols="30" rows="5"></textarea>
 		  		</td>
 		  	</tr>
 		  	<tr>
 		  		<td></td>
-		  		<td><input type="submit" name="btn" value="Confirm!"></td>
+		  		<td><input type="submit" name="btn" value="Confirm!" ></td>
 		  	</tr>
 		  </table>
 		</form>

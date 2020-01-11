@@ -15,6 +15,7 @@ if(mysqli_query($connection,$sql)){
 	</div>
 	<div id="add_user">
 		<table style="margin-left: 0.5%;">
+
 				<tr>
 					<th>Id</th>
 					<th>Title</th>
@@ -27,7 +28,8 @@ if(mysqli_query($connection,$sql)){
 					<th>image <br>three</th>
 					<th>Offer</th>
 				</tr>
-				<?php while($result=mysqli_fetch_assoc($resource_id)) {?>
+				<?php while($result=mysqli_fetch_assoc($resource_id)) {
+					?>
 				<tr>
 					<td><p><?php echo $result['a_id']; ?></p></td>
 					<td><p><?php echo $result['title']; ?></p></td>
@@ -35,9 +37,15 @@ if(mysqli_query($connection,$sql)){
 					<td><p><?php echo $result['subcategory']; ?></p></td>
 					<td><p><?php echo $result['package']; ?></p></td>
 					<td><p><?php echo $result['company_name']; ?></p></td>
-					<td><img src="<?php echo $result['a_img_1']; ?>" style="width: 40px;height: 40px;"></td>
-					<td><img src="<?php echo $result['a_img_2']; ?>" style="width: 40px;height: 40px;"></td>
-					<td><img src="<?php echo $result['a_img_3']; ?>" style="width: 40px;height: 40px;"></td>
+					<td>
+						<img src="<?php echo $result['a_img_1']; ?>" style="width: 40px;height: 40px;">
+					</td>
+					<td>
+						<img src="<?php echo $result['a_img_2']; ?>" style="width: 40px;height: 40px;">
+					</td>
+					<td>
+						<img src="<?php echo $result['a_img_3']; ?>" style="width: 40px;height: 40px;">
+					</td>
 					<td><p><?php echo $result['offer']; ?></p></td>
 				</tr>
 			<?php } ?>

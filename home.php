@@ -1,7 +1,7 @@
 <div class="home_container">
 <div class="section-padding zigzag-text-bg-1">
 	<div class="container">
-		<div class="row">
+		<div class="row001">
 			<div class="col-md-6">
 				<div class="zigzag-text">
 					<h2>Lorem Ipsum</h2>
@@ -11,11 +11,11 @@
 			</div>
 			<div class="right_container">
 				<div class="right">
-					<img class="mySlides" src="Kotka-Beach.jpg" alt="">
-					<img class="mySlides" src="tour_package341.jpg" alt="">
-					<img class="mySlides" src="admin/image/subcategory_image/10.jpg" alt="">
-					<img class="mySlides" src="admin/image/subcategory_image/3.jpg" alt="">
-					<img class="mySlides" src="admin/image/subcategory_image/4.jpg" alt="">
+					<img class="mySlides" src="admin/image/bck/1.jpg" alt="">
+					<img class="mySlides" src="admin/image/bck/2.jpg" alt="">
+					<img class="mySlides" src="admin/image/bck/3.jpg" alt="">
+					<img class="mySlides" src="admin/image/bck/4.jpg" alt="">
+					<img class="mySlides" src="admin/image/bck/7.jpg" alt="">
 				</div>
 			</div>
 		</div>
@@ -23,7 +23,7 @@
 </div>
 <div class="section-padding zigzag-text-bg-2">
 	<div class="container">
-		<div class="row">
+		<div class="row001">
 			<div class="col-md-6 offset-md-6">
 				<div class="zigzag-text">
 					<h2>Lorem Ipsum</h2>

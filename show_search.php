@@ -9,8 +9,6 @@ require 'database/db_connect.php';
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>--Tour_category---</title>
-		<meta charset="UTF-8">
 	<title>--Home--</title>
 	<link rel="stylesheet" href="assets/user_css/user_css.css">
 	<link href='https://fonts.googleapis.com/css?family=Beth Ellen' rel='stylesheet'>
@@ -25,12 +23,12 @@ require 'database/db_connect.php';
 
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
 </head>
 <body>
 	<div class="top_header">
 		<?php include 'user_top.php'; ?>
 	</div>
+
 	<div class="add_slider">
 		<?php 
 
@@ -50,27 +48,26 @@ require 'database/db_connect.php';
 			<p><span style="color: red;font-size: 40px;font-weight: 700;font-family: bold;margin-top: -20px;text-align: center;"><?php echo $result['offer']; ?></span> in <?php echo $result['package_name']; ?></p>
 		</div>
 	</div>
-
+	
 	<?php 
-		if (isset($_GET['key'])) {
+
+	if (isset($_GET['key'])) {
 
 			$val = $_GET['key'];
 			if ($val==1) {
 				include 'home.php';
-				include 'user_galary.php';
-				include 'about.php';
-				include 'user_contact.php';
 			}else if ($val==2) {
 				include 'user_galary.php';
-				include 'about.php';
-				include 'user_contact.php';
+			}else if ($val==3) {
+				include 'category.php';
 			}else if ($val==4) {
 				include 'about.php';
-				include 'user_contact.php';
 			}else if ($val==5) {
 				include 'user_contact.php';
 			}
-		}		?>
+		}
+
+	 ?>
 
 	<div class="category_container">
 		<div class="category_function">
@@ -90,14 +87,14 @@ require 'database/db_connect.php';
 			<?php } ?>
 			</ul>
 		</div>
-		<!-- <?php include 'category_description.php'; ?>  -->
+		
 		 <?php 
 		if (isset($_GET['ca_id'])) {
 
 				$val = $_GET['ca_id'];
 				if (!empty($val)) {
 				include 'user_subcategory.php';
-				} 
+				}
 			}
 			if(isset($_GET['subc_id'])){
 					$val1= $_GET['subc_id'];
@@ -117,36 +114,25 @@ require 'database/db_connect.php';
 						include 'user_enquiry.php';
 					}
 				}
-				// if(isset($_GET['key'])){
-				// 	$val1= $_GET['key'];
-				// 	if(!empty($val1)){
-				// 		include 'cancel_tour.php';
-				// 	}
-				// }
 			if(isset($_GET['key3'])){
 					$val1= $_GET['key3'];
-					
-					$_SESSION['val'] = $val1;
-
 					if($val1==17){
 						include 'cancel_tour.php';
 					}
 				}
-				if (isset($_GET['key'])) {
-
-			$val = $_GET['key'];
-			if($val==3){
-					include 'category_description.php';
-				}
-		}
 				
+				if(isset($_POST['submit'])){
+					include 'show_search_result.php';
+				}
 		 ?>
-</div>
-<?php include 'about.php';
-			include 'user_contact.php'; ?>
-<div class="foter">
+		 
+
+	</div>
+
+	<div class="foter">
 		<?php include 'bottom.php'; ?>
-</div>
+	</div>
+
 
 
 
@@ -176,8 +162,5 @@ require 'database/db_connect.php';
 
 
 
-
 </body>
 </html>
-
-	

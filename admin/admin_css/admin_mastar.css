@@ -81,9 +81,9 @@
 #container{
 	float: left;
 	overflow: hidden;
-	width: 80%;
+	width: 95%;
 	/*background: green;*/
-	margin-left: 10%;
+	margin-left: 5%;
 	margin-top: 25px;
 	margin-bottom: 25px;
 	box-shadow:  -10px 0px 3px #000;
@@ -105,9 +105,12 @@
 #admin_function h3{
 	text-transform: uppercase;
 	padding: 25px 15px;
-	font-size: 25px;
+	font-size: 27px;
 	font-weight: 700;
 	width: 100%;
+	margin-left: -10px;
+	font-family: bold;
+	margin-top: 60px;
 }
 .menu{
   width: 300px;
@@ -212,7 +215,7 @@
  	float: left;
  	overflow: hidden;
  	width: 98%;
- 	margin-left: 2%;
+ 	margin-left: 0.5%;
  	margin-top: 70px;
  	margin-bottom: 40px;
  	/*margin-right: 20%;*/
@@ -432,8 +435,9 @@ input[type=file]{
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  z-index: 5; /* Sit on top */
+  padding-top: 100px;
+  padding-left: 200px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -533,3 +537,24 @@ input[type=file]{
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 /*profile drop down menu close*/
+
+
+
+.notification {
+  color: black;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.notification .badge {
+  position: absolute;
+  top: 0px;
+  padding: 5px 5px;
+  border-radius: 50%;
+  background-color: green;
+  font-family: bold;
+  font-weight: 900;
+ /* height: 10px;*/
+  color: white;
+}

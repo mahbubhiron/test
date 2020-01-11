@@ -29,7 +29,8 @@
 				<a href="?key=<?php echo 14; ?>">Delete Package</a>
 				<a href="?key=<?php echo 15; ?>">View Package</a>
 			</div>
-		</li><li class="item" id="Advertisement">
+		</li>
+		<li class="item" id="Advertisement">
 			<a href="#Advertisement" class="btn"><i class="fas fa-ad"></i>Advertisement</a>
 			<div class="smenu">
 				<a href="?key=<?php echo 16; ?>">Add Advertisement</a>
@@ -38,10 +39,75 @@
 				<a href="?key=<?php echo 18; ?>">View Advertisement</a>
 			</div>
 		</li>
-		</li><li class="item" id="Enquiry">
-			<a href="#Enquiry" class="btn"><i class="fas fa-adjust"></i>Enquiry</a>
+		<li class="item" id="Enquiry">
+
+			<?php 
+			$cn=mysqli_connect("localhost","root","","db_ttms");
+			$query = "select * from enquiry where Statusfield = 'Pending' ";
+			$result = mysqli_query($cn,$query);
+			if ($result) {
+			  $num = mysqli_num_rows($result);
+			}
+
+			$query1 = "select * from enquiry where Statusfield = 'Cancel' ";
+			$result1 = mysqli_query($cn,$query1);
+			if ($result1) {
+			  $num1 = mysqli_num_rows($result1);
+			}
+
+			 ?>
+
+				<a href="#Enquiry" class="btn" class="notification"><i class="fas fa-adjust" ></i>
+				<span>Enquiry</span>
+      			<span class="badge" style="position: absolute;
+									  top: 0px;
+									  padding: 5px 5px;
+									  border-radius: 50%;
+									  background-color: green;
+									  font-family: bold;
+									  font-weight: 900;
+									 /* height: 10px;*/
+									  color: white;"><?php echo $num+$num1; ?></span>
+			</a>
 			<div class="smenu">
-				<a href="?key=<?php echo 19; ?>">View Enquiry</a>
+				<a href="?key=<?php echo 19; ?>" class="notification">
+					<span>Confirm Tour</span>
+      				<span class="badge"><?php echo $num; ?></span>
+				</a>
+				<a href="?key=<?php echo 21; ?>" class="notification">
+					<span>Cancel Tour</span>
+      				<span class="badge"><?php echo $num1; ?></span>
+				</a>
+			</div>
+		</li>
+		<li class="item" id="Contact">
+			<?php 
+
+			$cn=mysqli_connect("localhost","root","","db_ttms");
+			$query = "select * from tbl_contact ";
+			$result = mysqli_query($cn,$query);
+			if ($result) {
+			  $num = mysqli_num_rows($result);
+			}
+
+			 ?>
+			<a href="#Contact" class="btn"><i class="fas fa-ad"></i>
+				<span>Contact</span>
+      			<span class="badge" style="position: absolute;
+									  top: 0px;
+									  padding: 5px 5px;
+									  border-radius: 50%;
+									  background-color: green;
+									  font-family: bold;
+									  font-weight: 900;
+									 /* height: 10px;*/
+									  color: white;"><?php echo $num; ?></span>
+			</a>
+			<div class="smenu">
+				<a href="?key=<?php echo 22; ?>" class="notification">
+					<span>View Contact</span>
+      				<span class="badge"><?php echo $num; ?></span>
+				</a>
 			</div>
 		</li>
 	</div>

@@ -56,10 +56,14 @@
 				else if($val==18){
 					echo "--View Advertisemnet--";
 				}else if($val==19){
-					include '';
+					echo "--Confirm Tour--";
 				}
 				else if($val==20){
-					echo "--Update Advertisemnet";;
+					echo "--Update Advertisemnet--";;
+				}else if($val==21){
+					echo "--Cancel Tour--";;
+				}else if($val==22){
+					echo "--View Contact--";;
 				}
 
 			}else{
@@ -74,6 +78,8 @@
 	<script src="https://kit.fontawesome.com/6f84ddc6a9.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+
 	<div id="main">
 
 		<div id="header">
@@ -93,6 +99,17 @@
 			if (isset($_GET['key'])) {
 
 				$val = $_GET['key'];
+
+
+				$_SESSION['val'] = $val;
+
+
+				if (isset($_GET['eid'])) {
+				  $del_ids=$_GET['eid'];
+				$s="update enquiry set Statusfield='Confirm' where Enquiryid= $del_ids ";
+				mysqli_query($connection,$s);
+				}
+
 				if ($val==1) {
 				include 'add_user.php';
 				}
@@ -142,10 +159,15 @@
 				else if($val==18){
 					include 'view_advertisement.php';
 				}else if($val==19){
-					include '';
+					
+					include 'confirm_tour.php';
 				}
 				else if($val==20){
 					include 'update_advertisement.php';
+				}else if($val==21){
+					include 'cancel_tour.php';
+				}else if($val==22){
+					include 'view_contact.php';
 				}
 
 			}
